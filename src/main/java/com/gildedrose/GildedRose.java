@@ -7,8 +7,22 @@ class GildedRose {
         this.items = items;
     }
 
+    public void updateConjuredQuality(Item item) {
+        item.quality-=2;
+        if (item.quality<0)
+            item.quality = 0;
+        item.sellIn--;
+    }
+
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
+
+            if (items[i].name.equals("Conjured Mana Cake")) {
+                updateConjuredQuality(items[i]);
+                continue;
+            }
+
+
             if (!items[i].name.equals("Aged Brie")
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (items[i].quality > 0) {
