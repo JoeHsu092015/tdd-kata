@@ -6,14 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GildedRoseTest {
 
-    @Test
-    void testAddConjured() {
-        Item[] items = new Item[] { new Item("Conjured Mana Cake", 3, 6) };
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals("Conjured Mana Cake", app.items[0].name);
-    }
-
     // 每天結束時，系統會降低每個商品的上述兩個值
     @Test
     void testUpdateSellinAndQuality() {
